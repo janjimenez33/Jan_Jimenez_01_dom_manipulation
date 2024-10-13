@@ -1,53 +1,53 @@
 // EXERCISE 1
 console.log(document.getElementById('mainTitle'));
 
-//EXERCISE 2
+// EXERCISE 2
 document.getElementById('content').innerHTML = '<p>Updated Content</p>';
 
-//EXERCISE 3
+// EXERCISE 3
 document.getElementById('content').style.backgroundColor = 'lightgreen';
 
-//EXERCISE 4
+// EXERCISE 4
 document.getElementById('list').classList.add('active');
 
 setTimeout(() => {
     document.getElementById('list').classList.remove('active');
-}, 
-2);
+}, 2000); // 2s
 
-//EXERCISE 5
-let button = document.createElement('button');
+// EXERCISE 5
+let newButton = document.createElement('button');
 
-button.textContent = 'Click Me';
+newButton.textContent = 'Click Me';
+document.getElementById('content').appendChild(newButton);
 
-document.getElementById('content').appendChild(button);
-
-//EXERCISE 6
+// EXERCISE 6
 let resultElement = document.getElementById('result');
 
 if (resultElement) {
     resultElement.remove();
 }
 
-//EXERCISE 7
-button.addEventListener('click', () => {
+// EXERCISE 7
+actionButton.addEventListener('click', () => {
     alert('Button Clicked!');
 });
 
-//EXERCISE 8
+// EXERCISE 8
 let inputField = document.querySelector('input');
 let newResultDiv = document.createElement('div');
+
 document.body.appendChild(newResultDiv);
 
 inputField.addEventListener('input', () => {
     newResultDiv.textContent = inputField.value;
 });
 
-//EXERCISE 9
+// EXERCISE 9
 let actionButton = document.getElementById('actionButton');
 let contentDiv = document.getElementById('content');
 
 actionButton.addEventListener('click', () => {
+    
     if (contentDiv.style.display === 'none') {
         contentDiv.style.display = 'block';
     } else {
@@ -55,9 +55,8 @@ actionButton.addEventListener('click', () => {
     }
 });
 
-//EXERCISE 10
-let inputFieldName = document.getElementById('inputField');
-if (inputFieldName) {
+// EXERCISE 10
+if (inputField) {
     inputField.placeholder = "Enter your name";
 } else {
     console.error('Input field not found');
