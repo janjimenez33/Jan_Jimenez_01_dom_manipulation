@@ -11,8 +11,8 @@ document.getElementById('content').style.backgroundColor = 'lightgreen';
 document.getElementById('list').classList.add('active');
 
 setTimeout(() => {
-    document.getElementById('list').classList.remove('active');
-}, 2000); // 2s
+  document.getElementById('list').classList.remove('active');
+}, 2000);
 
 // EXERCISE 5
 let newButton = document.createElement('button');
@@ -24,13 +24,16 @@ document.getElementById('content').appendChild(newButton);
 let resultElement = document.getElementById('result');
 
 if (resultElement) {
-    resultElement.remove();
+  resultElement.remove();
 }
 
 // EXERCISE 7
-actionButton.addEventListener('click', () => {
-    alert('Button Clicked!');
-});
+let actionButton = document.getElementById('actionButton');
+
+if (actionButton) {
+    actionButton.addEventListener('click', () => {
+        alert('Button Clicked!');
+    });
 
 // EXERCISE 8
 let inputField = document.querySelector('input');
@@ -39,25 +42,27 @@ let newResultDiv = document.createElement('div');
 document.body.appendChild(newResultDiv);
 
 inputField.addEventListener('input', () => {
-    newResultDiv.textContent = inputField.value;
+  newResultDiv.textContent = inputField.value;
 });
 
 // EXERCISE 9
 let actionButton = document.getElementById('actionButton');
-let contentDiv = document.getElementById('content');
 
-actionButton.addEventListener('click', () => {
-    
-    if (contentDiv.style.display === 'none') {
-        contentDiv.style.display = 'block';
-    } else {
-        contentDiv.style.display = 'none';
-    }
-});
+if (actionButton) {
+  actionButton.addEventListener('click', () => {
+    let contentDiv = document.getElementById('content');
+    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+  });
+} else {
+  console.error('Action button not found');
+}
+
 
 // EXERCISE 10
 if (inputField) {
-    inputField.placeholder = "Enter your name";
+  inputField.placeholder = 'Enter your name';
 } else {
-    console.error('Input field not found');
+  console.error('Input field not found');
 }
+}
+
