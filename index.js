@@ -1,68 +1,61 @@
 // EXERCISE 1
-console.log(document.getElementById('mainTitle'));
+const mainTitleElement = document.getElementById('mainTitle');
+
+console.log(mainTitle);
 
 // EXERCISE 2
-document.getElementById('content').innerHTML = '<p>Updated Content</p>';
+const paragraphs = document.querySelectorAll('p');
+
+paragraphs[1].textContent = "This paragraph has been changed.";
 
 // EXERCISE 3
-document.getElementById('content').style.backgroundColor = 'lightgreen';
+const firstListItem = document.querySelector('li');
 
+firstListItem.style.color = 'red';
 // EXERCISE 4
-document.getElementById('list').classList.add('active');
+const firstParagraph = document.querySelector('p');
 
-setTimeout(() => {
-  document.getElementById('list').classList.remove('active');
-}, 2000);
+firstParagraph.classList.add('highlight');
 
 // EXERCISE 5
-let newButton = document.createElement('button');
+const newListItem = document.createElement('li');
+newListItem.textContent = 'Item 4';
 
-newButton.textContent = 'Click Me';
-document.getElementById('content').appendChild(newButton);
+const existingList = document.querySelector('ul');
+list.appendChild(newListItem);
 
 // EXERCISE 6
-let resultElement = document.getElementById('result');
+const list = document.querySelector('ul');
 
-if (resultElement) {
-  resultElement.remove();
-}
+list.removeChild(list.lastElementChild);
 
 // EXERCISE 7
-let actionButton = document.getElementById('actionButton');
+const button = document.getElementById('actionButton');
 
-if (actionButton) {
-    actionButton.addEventListener('click', () => {
-        alert('Button Clicked!');
-    });
-
-// EXERCISE 8
-let inputField = document.querySelector('input');
-let newResultDiv = document.createElement('div');
-
-document.body.appendChild(newResultDiv);
-
-inputField.addEventListener('input', () => {
-  newResultDiv.textContent = inputField.value;
+button.addEventListener('click', () => {
+    alert('Button Clicked!');
 });
 
-// EXERCISE 9
-let actionButton = document.getElementById('actionButton');
+// EXERCISE 8
+const inputField = document.getElementById('inputField');
+const resultDiv = document.getElementById('result');
 
-if (actionButton) {
-  actionButton.addEventListener('click', () => {
-    let contentDiv = document.getElementById('content');
+inputField.addEventListener('input', function() {
+    resultDiv.textContent = inputField.value;
+});
+
+
+// EXERCISE 9
+const toggleBtn = document.getElementById('toggleBtn');
+const contentDiv = document.getElementById('content');
+
+toggleBtn.addEventListener('click', () => {
     contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-  });
-} else {
-  console.error('Action button not found');
-}
+});
+
 
 
 // EXERCISE 10
-if (inputField) {
-  inputField.placeholder = 'Enter your name';
-} else {
-  console.error('Input field not found');
-}
-}
+const nameInput = document.getElementById('nameInput');
 
+nameInput.placeholder = 'Insert your name';
